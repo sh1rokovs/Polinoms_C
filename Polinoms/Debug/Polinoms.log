@@ -1,0 +1,22 @@
+﻿  Main.cpp
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(12,35): warning C4244: return: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(35,17): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(36,16): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(78,19): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(80,32): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(82,19): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(84,32): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(86,19): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(88,32): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(112,20): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(114,33): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(116,20): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(118,33): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(120,20): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(122,33): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(183,8): warning C4244: +=: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(185,25): warning C4244: +=: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(232,8): warning C4244: +=: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(234,26): warning C4244: +=: преобразование "float" в "int", возможна потеря данных
+D:\ProjectsC++\Polinoms\Polinoms\Polinom.h(143): warning C4715: Polinom::GetSize: значение возвращается не при всех путях выполнения
+  Polinoms.vcxproj -> D:\ProjectsC++\Polinoms\Debug\Polinoms.exe
