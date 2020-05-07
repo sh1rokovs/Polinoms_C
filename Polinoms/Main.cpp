@@ -9,7 +9,7 @@ int main()
 	setlocale(LC_ALL, "ru");
 
 	Polinom polinom;
-	int s = 0, kol = 0, w = 1, q = 0, q1 = 0;
+	int s = 0, kol = 0, w = 1, q = 0, q1 = 0, r = 0;
 	float p = 0;
 
 	while (w)
@@ -36,17 +36,40 @@ int main()
 				cin >> p;
 				cout << "x^:";
 				cin >> q;
-				q1 = q * 100;
+				if (0 <= q && q <= 9)
+					q1 = q * 100;
+				else
+				{
+					r++;
+					cout << "Неправильная степень";
+				}
 				cout << endl;
 				cout << "y^:";
 				cin >> q;
-				q1 = q1 + q * 10;
+				if (0 <= q && q <= 9)
+					q1 = q1 + q * 10;
+				else
+				{
+					r++;
+					cout << "Неправильная степень";
+				}
 				cout << endl;
 				cout << "z^:";
 				cin >> q;
-				q1 = q1 + q;
-				polinom.InsElem(p, q1, 1);
+				if (0 <= q && q <= 9)
+					q1 = q1 + q;
+				else
+				{
+					r++;
+					cout << "Неправильная степень";
+				}
+				cout << endl;
+				if (r != 3)
+					polinom.InsElem(p, q1, 1);
+				else
+					cout << "Моном не создан" << endl;
 				q1 = 0;
+				r = 0;
 			}
 			cout << "Введите количество мономов в втором полиноме:" << endl;
 			cout << "-->:";
@@ -59,17 +82,40 @@ int main()
 				cin >> p;
 				cout << "x^:";
 				cin >> q;
-				q1 = q * 100;
+				if (0 <= q && q <= 9)
+					q1 = q * 100;
+				else
+				{
+					r++;
+					cout << "Неправильная степень";
+				}
 				cout << endl;
 				cout << "y^:";
 				cin >> q;
-				q1 = q1 + q * 10;
+				if (0 <= q && q <= 9)
+					q1 = q1 + q * 10;
+				else
+				{
+					r++;
+					cout << "Неправильная степень";
+				}
 				cout << endl;
 				cout << "z^:";
 				cin >> q;
-				q1 = q1 + q;
-				polinom.InsElem(p, q1, 2);
+				if (0 <= q && q <= 9)
+					q1 = q1 + q;
+				else
+				{
+					r++;
+					cout << "Неправильная степень";
+				}
+				cout << endl;
+				if (r != 3)
+					polinom.InsElem(p, q1, 2);
+				else
+					cout << "Моном не создан";
 				q1 = 0;
+				r = 0;
 			}
 			break;
 		case 2:
@@ -105,7 +151,10 @@ int main()
 		case 4:
 			system("cls");
 			cout << "1. Операция сложения" << endl;
-			cout << "2. Назад" << endl;
+			cout << "2. Операция вычитания" << endl;
+			cout << "3. Операция умножения" << endl;
+			cout << "4. Операция деления" << endl;
+			cout << "5. Назад" << endl;
 			cout << "-->:";
 			cin >> s;
 			switch (s)
@@ -114,6 +163,15 @@ int main()
 				polinom.SumPol();
 				break;
 			case 2:
+				polinom.DifPol();
+				break;
+			case 3:
+				polinom.MultPol();
+				break;
+			case 4:
+				polinom.DivPol();
+				break;
+			case 5:
 				break;
 			}
 			break;

@@ -148,12 +148,14 @@ void Polinom::InsElem(float coef, int pow, int num)
 	{
 		if (coef != 0)
 		{
+			pPrev = this->pHead;
 			pCurr = pHead->pNext;
 			for (int i = 0; i < GetSize(num); i++)
 			{
 				if (pCurr->pow > pow)
 				{
 					pCurr = pCurr->pNext;
+					pPrev = pPrev->pNext;
 					sch1 = 1;
 				}
 				if (pCurr->pow == pow)
@@ -162,13 +164,12 @@ void Polinom::InsElem(float coef, int pow, int num)
 					break;
 				}
 			}
-			if(sch != 1)
+			if (sch != 1)
 			{
 				if (sch1 == 1)
 				{
 					pNew = new Monom(coef, pow, pCurr);
-					pCurr = pCurr->pNext;
-					pCurr->pNext = pNew;
+					pPrev->pNext = pNew;
 					size++;
 				}
 				else
@@ -186,7 +187,7 @@ void Polinom::InsElem(float coef, int pow, int num)
 				}
 				else
 				{
-					DelElem(1,size);
+					DelElem(1, size);
 				}
 			}
 		}
@@ -197,12 +198,14 @@ void Polinom::InsElem(float coef, int pow, int num)
 	{
 		if (coef != 0)
 		{
+			pPrev2 = this->pHead2;
 			pCurr2 = pHead2->pNext;
 			for (int i = 0; i < GetSize(num); i++)
 			{
 				if (pCurr2->pow > pow)
 				{
 					pCurr2 = pCurr2->pNext;
+					pPrev2 = pPrev2->pNext;
 					sch1 = 1;
 				}
 				if (pCurr2->pow == pow)
@@ -216,8 +219,7 @@ void Polinom::InsElem(float coef, int pow, int num)
 				if (sch1 == 1)
 				{
 					pNew2 = new Monom(coef, pow, pCurr2);
-					pCurr2 = pCurr2->pNext;
-					pCurr2->pNext = pNew2;
+					pPrev2->pNext = pNew2;
 					size2++;
 				}
 				else
@@ -418,16 +420,27 @@ void Polinom::DifPol()
 	{
 		if (pCurr->pow == pCurr2->pow)
 		{
-			pCurr->coef += pCurr2->coef;
+			pCurr->coef -= pCurr2->coef;
 
 			DelElem(2, 1);
-
-			pCurr = pCurr->pNext;
-			pPrev2 = this->pHead2;
-			pCurr2 = pPrev2->pNext;
-
-			size++;
 			size2--;
+
+			if (pCurr->coef != 0)
+			{
+				pCurr = pCurr->pNext;
+				pPrev2 = this->pHead2;
+				pCurr2 = pPrev2->pNext;
+
+				size++;
+			}
+			else
+			{
+				tmp = pCurr;
+				pPrev->pNext = tmp->pNext;
+				pCurr = tmp->pNext;
+				delete tmp;
+				size--;
+			}
 		}
 		if (pCurr->pow < pCurr2->pow)
 		{
@@ -474,7 +487,7 @@ void Polinom::MultPol()
 	{
 		if (pCurr->pow == pCurr2->pow)
 		{
-			pCurr->coef += pCurr2->coef;
+			pCurr->coef *= pCurr2->coef;
 
 			DelElem(2, 1);
 
@@ -530,7 +543,7 @@ void Polinom::DivPol()
 	{
 		if (pCurr->pow == pCurr2->pow)
 		{
-			pCurr->coef += pCurr2->coef;
+			pCurr->coef /= pCurr2->coef;
 
 			DelElem(2, 1);
 
